@@ -60,7 +60,7 @@ def fetchComic(url, page_index):
         cur_index += 1
 
 def fetchPageUrl():
-    for i in range(_start_index, 2):
+    for i in range(_start_index, _end_index + 1):
         url = getUrlWithIndex(i)
         fetchComic(url, i)
 
