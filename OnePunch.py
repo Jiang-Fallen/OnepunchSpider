@@ -56,7 +56,7 @@ def fetchComic(url, page_index):
 
         # 获取 image url
         soup_temp.script.decompose()
-        img_path = re.search(r'\bmhurl="(.+?\.jpg)";', soup_temp.get_text())
+        img_path = re.search(r'\bmhurl="(.+?\.jpg)";', str(soup_temp))
         img_url = _img_base_url + img_path.group(1)
         downloadImage(img_url, getImgName(page_index, cur_index))
         cur_index += 1
